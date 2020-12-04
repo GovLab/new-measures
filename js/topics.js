@@ -64,7 +64,8 @@ new Vue({
 
 })
 .catch(error => console.error(error));
-    }
+}
+}
 });
 
 
