@@ -46,18 +46,16 @@
   </div>
   <div id="myLinks">
     <div class="menu-items">
-      <div class="menu-sub"><a href="index.html">Home</a></div>
-      <div class="menu-sub"><a href="about.html">About</a></div>
-      <div class="menu-sub"> <a href="index.html#topics">Topic</a></div>
-      <div class="menu-sub"><a href="team.html">Team</a></div>
-      <div class="menu-sub"><a href=""></a></div>
-      <div class="menu-sub"><a href=""></a></div>
-      <div class="menu-sub"><a href=""></a></div>
-      <!-- <div class="menu-sub"><a href="/recommendations.html">Recommendations</a></div>
-      <div class="menu-sub"><a href="/map.html">Explore the Map</a></div>
-      <div class="menu-sub"><a href="https://medium.com/smarter-crowdsourcing">Blog</a></div> -->
+      <div class="menu-sub" onclick="dismiss_menu()"><a href="#">Home</a></div>
+      <div class="menu-sub" onclick="dismiss_menu()"><a href="about.html">About</a></div>
+      <div class="menu-sub" onclick="dismiss_menu()"> <a href="#topics">Topic</a></div>
+      <div class="menu-sub" onclick="dismiss_menu()"><a href="team.html">Team</a></div>
+      <div class="menu-sub" onclick="dismiss_menu()"><a href=""></a></div>
+      <div class="menu-sub" onclick="dismiss_menu()"><a href=""></a></div>
+      <div class="menu-sub" onclick="dismiss_menu()"><a href=""></a></div>
     </div>
   </div>
+  <div onclick="dismiss_menu()">
   <div class="row top-section topic partipate">
 
     <h1>Share Your Expertise</h1>
@@ -145,6 +143,7 @@
         upcoming online conferences. In the spirit of openness, we will publish the names, affiliations, and locations
         of all participants. We will not share contact information.</p>
     </div>
+    </div>
   </body>
   <footer class='footer-alt'>
     <div class="row align-center">
@@ -192,13 +191,9 @@
 </script>
 <script>
   /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
-  function scroll_dismiss() {
-    if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
-      var x = document.getElementById("myLinks");
-      if (x.style.display === "block") {
-        x.style.display = "none";
-      }
-    }
+  function dismiss_menu() {
+    var x = document.getElementById("myLinks");
+    x.style.display = "none";
   }
 </script>
 
