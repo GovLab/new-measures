@@ -55,10 +55,10 @@
     </div>
   </div>
   <div id="home-page">
-  <div class="row top-section topic"  :style="{ backgroundImage: 'url(' + topicData.image.data.full_url+ ')' }">
+  <div class="row top-section topic"  :style="{ backgroundImage: 'url(' + topicData[0].image.data.full_url+ ')' }">
     
-    <h1>{{topicData.topic_title}}</h1>
-    <p>{{topicData.short_description}}</p>
+    <h1>{{topicData[0].topic_title}}</h1>
+    <p>{{topicData[0].short_description}}</p>
   </div>
   <div class="row align-center">
 
@@ -68,21 +68,21 @@
  
     <section>
       <div class="main-buttons accent-color index-page-button">
-        <a v-if="!topicData.conference_takeaways" href="/participate.html" class="button ">Participate</a>
-        <a v-if="!topicData.conference_takeaways && topicData.problem_definition" :href="topicData.problem_definition" target="blank" class="button">READ THE PROBLEM DESCRIPTION</a>
-        <a v-if="topicData.recommendations_memo":href="topicData.recommendations_memo" target="_blank" class="button">Recommendations Memo</a>
-        <a v-if="topicData.conference_takeaways":href="topicData.conference_takeaways" target="_blank" class="button">CONFERENCE TAKEAWAYS</a>
+        <a v-if="!topicData[0].conference_takeaways" href="/participate.html" class="button ">Participate</a>
+        <a v-if="!topicData[0].conference_takeaways && topicData[0].problem_definition" :href="topicData[0].problem_definition" target="blank" class="button">READ THE PROBLEM DESCRIPTION</a>
+        <a v-if="topicData[0].recommendations_memo":href="topicData[0].recommendations_memo" target="_blank" class="button">Recommendations Memo</a>
+        <a v-if="topicData[0].conference_takeaways":href="topicData[0].conference_takeaways" target="_blank" class="button">CONFERENCE TAKEAWAYS</a>
       </div>
     </section>
     <section class="light-section topic_desc">
       <h1>DESCRIPTION</h1>
-        <p>{{topicData.long_description}}</p>
+        <p>{{topicData[0].long_description}}</p>
 
     </section>
     <div class="main-buttons accent-color topic-page-button">
-      <a v-if="topicData.conference_takeaways && topicData.problem_definition" :href="topicData.problem_definition" target="blank" class="button">READ THE PROBLEM DESCRIPTION</a>
-      <a v-if="topicData.agenda_document" :href="topicData.agenda_document" target="_blank" class="button">Agenda and Logistics</a>
-      <a v-if="topicData.participants_list" :href="topicData.participants_list" target="_blank" class="button">EXPERTS AND PARTICIPANTS</a>
+      <a v-if="topicData[0].conference_takeaways && topicData[0].problem_definition" :href="topicData[0].problem_definition" target="blank" class="button">READ THE PROBLEM DESCRIPTION</a>
+      <a v-if="topicData[0].agenda_document" :href="topicData[0].agenda_document" target="_blank" class="button">Agenda and Logistics</a>
+      <a v-if="topicData[0].participants_list" :href="topicData[0].participants_list" target="_blank" class="button">EXPERTS AND PARTICIPANTS</a>
     </div>
     
   </div>
