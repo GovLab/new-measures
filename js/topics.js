@@ -37,7 +37,7 @@ new Vue({
 
   created: function created() {
     this.topicslug=window.location.href.split('/');
-    this.topicslug = this.memberslug[this.topicslug.length - 1];
+    this.topicslug = this.topicslug[this.topicslug.length - 1];
     console.log(this.topicslug);
     this.fetchIndex();
   },
