@@ -20,7 +20,7 @@
 
 </head>
 
-<body class="homepage"  onwheel="scroll_dismiss()">
+<body class="homepage">
 
   <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
 
@@ -37,11 +37,7 @@
     <a class="top_logo" href="#home"><img src="../images/new-measures-full-h-white.svg" alt="Smarter Crowdsourcing | New Measures"></a>
     <!-- Navigation links (hidden by default) -->
     <div class='lang-select'>
-      <!-- <a style="padding: 15px 5px" href="es/contact-tracing.html">ES</a>
-      <p style="color:#ffffff">|</p>
-      <a style="padding: 15px 5px" href="#" class="active">EN</a>
-      <p style="color:#ffffff">|</p>
-      <a style="padding: 15px 5px" href="pt/contact-tracing.html">PT</a> -->
+
     </div>
   </div>
   <div id="myLinks">
@@ -59,10 +55,10 @@
     </div>
   </div>
   <div id="home-page">
-  <div class="row top-section topic"  :style="{ backgroundImage: 'url(' + indexData[1].image.data.full_url+ ')' }">
+  <div class="row top-section topic"  :style="{ backgroundImage: 'url(' + topicData.image.data.full_url+ ')' }">
     
-    <h1>{{indexData[1].translations[0].topic_title}}</h1>
-    <p>{{indexData[1].translations[0].short_description}}</p>
+    <h1>{{topicData.topic_title}}</h1>
+    <p>{{topicData.short_description}}</p>
   </div>
   <div class="row align-center">
 
@@ -72,38 +68,36 @@
  
     <section>
       <div class="main-buttons accent-color index-page-button">
-        <!-- <a href="/call-for-participants.html" class="button ">Participate</a> -->
-        <a href="https://docs.google.com/document/d/1ZZEMqf6j1caIcjxHFZLkxxc5p_ECRB_Va6s2zOxWaG4/edit?usp=sharing" target="_blank" class="button">Recommendations Memo</a>
-        <a href="https://docs.google.com/document/d/1OD_vymjHw6UC5CnpcLS6qTJX9_IFRYS0I2gN9-Mx37k/edit?usp=sharing" target="_blank" class="button">CONFERENCE TAKEAWAYS</a>
+        <a v-if="!topicData.conference_takeaways" href="/participate.html" class="button ">Participate</a>
+        <a v-if="!topicData.conference_takeaways && topicData.problem_definition" :href="topicData.problem_definition" target="blank" class="button">READ THE PROBLEM DESCRIPTION</a>
+        <a v-if="topicData.recommendations_memo":href="topicData.recommendations_memo" target="_blank" class="button">Recommendations Memo</a>
+        <a v-if="topicData.conference_takeaways":href="topicData.conference_takeaways" target="_blank" class="button">CONFERENCE TAKEAWAYS</a>
       </div>
     </section>
     <section class="light-section topic_desc">
       <h1>DESCRIPTION</h1>
-        <p>{{indexData[1].translations[0].long_description}}</p>
+        <p>{{topicData.long_description}}</p>
 
     </section>
     <div class="main-buttons accent-color topic-page-button">
-      <a href="https://docs.google.com/document/d/12JFEWk-QXC34Bt2JenqlSQ5566RV8YLdxh2Cxqqz0zk/edit?usp=sharing" target="blank" class="button">READ THE PROBLEM DESCRIPTION</a>
-      <a href="https://docs.google.com/document/d/1KI30Ko09VTxI4P-h9Hq_92a-vtEfh7MI9_OrJrMDEh0/edit?usp=sharing" target="_blank" class="button">READ THE REGIONAL REPORT</a>
-      <a href="https://docs.google.com/document/d/1a7Nwr2zB7aJHtZyvK5pLoXAVgZtbCAJ5LGPFb4n4ge0/edit?usp=sharing" target="_blank" class="button">Agenda and Logistics</a>
-      <a href="https://docs.google.com/document/d/1ZqNRJOKNfIYL9c6VlXeeb7jFP6w17aJ4aBYZca_0lM8/edit?usp=sharing" target="_blank" class="button">EXPERTS AND PARTICIPANTS</a>
+      <a v-if="topicData.conference_takeaways && topicData.problem_definition" :href="topicData.problem_definition" target="blank" class="button">READ THE PROBLEM DESCRIPTION</a>
+      <a v-if="topicData.agenda_document" :href="topicData.agenda_document" target="_blank" class="button">Agenda and Logistics</a>
+      <a v-if="topicData.participants_list" :href="topicData.participants_list" target="_blank" class="button">EXPERTS AND PARTICIPANTS</a>
     </div>
     
   </div>
   <footer class='footer-alt'>
     <div class="row align-center">
       <div class="medium-6 medium-centered columns">
-        <!-- <h4>In collaboration with</h4> -->
-        <!-- <h4>EN COLABORACIÓN CON</h4> -->
         <h4>IN COLLABORATION WITH</h4>
       </div>
 
     </div>
     <div class="row">
-      <div class="column">
+      <!-- <div class="column">
           <a class="footer_partner-logo" href="http://www.iadb.org/" target="_blank"><img
               src="images/partners/idb-white.gif" alt="Inter-American Development Bank"></a>
-      </div>
+      </div> -->
       <div class="column">
           <a class="footer_partner-logo" href="http://www.thegovlab.org" target="_blank"><img
               src="images/govlab-logo-white.png" alt="The GovLab"></a>
@@ -133,19 +127,9 @@
     }
   }
 </script>
-<script>
-  /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
-  function scroll_dismiss() {
-    if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
-    var x = document.getElementById("myLinks");
-    if (x.style.display === "block") {
-      x.style.display = "none";
-    } 
-  }
-  }
-</script>
+
 <script src='https://unpkg.com/vue@2.0.3/dist/vue.js'></script>
 <script src="https://unpkg.com/vue-meta/dist/vue-meta.min.js"></script>
-<script src="../js/new-measures.js"></script>
+<script src="../js/topics.js"></script>
 
 </html>

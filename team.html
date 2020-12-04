@@ -67,17 +67,14 @@
     <div id="home-page">
       <section class="team-container">
         <div class="org-col">
-          <h4>Inter-American Development Bank</h4>
+          <h4>Walton Family Foundation</h4>
         </div>
         <div class="team-col">
         
-          <div v-for="teammember in TeamData" v-if="teammember.organization=='IADB'" class="team-member">
-              <p class="name">{{teammember.name}}</p>
+          <div v-for="teammember in TeamData" v-if="teammember.organization=='wff'" class="team-member">
+              <p class="name">{{teammember.first_name}}&nbsp{{teammember.last_name}}</p>
               <p class="title">{{teammember.title}}</p>
               <p class="title">{{teammember.organization}}</p>
-          </div>
-          <div class="team-member">
-          <p class="name">Health and Social Protection staff at IADB country offices</p>
           </div>
         </div>
       </section>
@@ -87,8 +84,8 @@
         </div>
         <div class="team-col">
         
-          <div v-for="teammember in TeamData" v-if="teammember.organization=='The GovLab'" class="team-member">
-              <p class="name">{{teammember.name}}</p>
+          <div v-for="teammember in TeamData" v-if="teammember.organization=='govlab'" class="team-member">
+            <p class="name">{{teammember.first_name}}&nbsp{{teammember.last_name}}</p>
               <p class="title">{{teammember.title}}</p>
               <p class="title">{{teammember.organization}}</p>
           </div>
@@ -109,10 +106,10 @@
 
     </div>
     <div class="row">
-      <div class="column">
+      <!-- <div class="column">
         <a class="footer_partner-logo" href="http://www.iadb.org/" target="_blank"><img
             src="images/partners/idb-white.gif" alt="Inter-American Development Bank"></a>
-      </div>
+      </div> -->
       <div class="column">
         <a class="footer_partner-logo" href="http://www.thegovlab.org" target="_blank"><img
             src="images/govlab-logo-white.png" alt="The GovLab"></a>

@@ -105,7 +105,7 @@
             <h1>{{topic.topic_title}}</h1>
             <p>{{topic.short_description}}</p>
             <!-- <p>{{topic}}</p> -->
-            <p v-if="topic.slug"><a :href="topic.slug" class="button more-info">More Information</a></p>
+            <p v-if="topic.slug"><a :href="'topics/' + topic.slug" class="button more-info">More Information</a></p>
 
             <div class="topic_date">
               <!-- <h6>Conference on</h6> -->
