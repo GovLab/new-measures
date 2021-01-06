@@ -65,7 +65,9 @@
     <div id="home-page">
       <section class="light-section topic_desc">
         <h1><span id="underline">ABOUT THE PROJECT</span></h1>
-          <p>{{aboutData[0].short_summary}}</p>
+
+          <div v-html="aboutData[0].short_summary">
+          </div>
           <h1><span id="underline">ABOUT THE GOVLAB</span></h1>
           <a href="http://thegovlab.org" target="_blank">www.thegovlab.org</a>
           <div v-html="aboutData[0].about_govlab">
