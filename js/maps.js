@@ -141,7 +141,10 @@ new Vue({
         'experts',
         {
           sort: 'last_name',
-          fields: ['*.*']
+          fields: ['*.*'],
+          filter: {
+            topic: "education"
+          },
         }
       ).then(data => {
         console.log(data)
