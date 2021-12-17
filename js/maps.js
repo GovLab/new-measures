@@ -96,7 +96,7 @@ new Vue({
         
       else {
         let filtered_by_topic = self.expertData.filter(function (e) {
-          return e.experiential_learning_topics.some(are_element => are_element == self.selectedTopic);
+          return e.education_topics.some(are_element => are_element == self.selectedTopic);
         });
         self.filtered_topic = filtered_by_topic;
       }
